@@ -22,6 +22,7 @@ a, a:hover, a:visited {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
+    padding: 40px 10px;
 }
 
 /*para acionar o id chama com #   */
