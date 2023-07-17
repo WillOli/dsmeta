@@ -17,12 +17,15 @@ import com.devsuperior.dsmeta.services.SmsService;
 @RequestMapping(value = "/sales")
 public class SaleController {
 
+	private final SaleService service;
+	private final SmsService smsService;
+
 	@Autowired
-	private SaleService service;
-	
-	@Autowired
-	private SmsService smsService;
-	
+	public SaleController(SaleService service, SmsService smsService) {
+		this.service = service;
+		this.smsService = smsService;
+	}
+
 	@GetMapping
 	public Page<Sale> findSales(
 			@RequestParam(value="minDate", defaultValue = "") String minDate, 
